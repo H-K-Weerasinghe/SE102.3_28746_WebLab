@@ -1,0 +1,33 @@
+
+<html>
+<head>
+  <title>Extract Year of Birth from NIC</title>
+</head>
+<body>
+
+<script>
+function extractYearOfBirth(nic) {
+  
+  var yearOfBirth = nic.substring(4, 10);
+  var lastTwoDigits = yearOfBirth.substring(4, 6);
+  var fullYear = "19" + lastTwoDigits;
+
+  return fullYear;
+}
+
+function displayYearOfBirth() {
+  var nicNumber = prompt("Enter the student's NIC number:");
+
+  if (nicNumber) {
+    var yearOfBirth = extractYearOfBirth(nicNumber);
+    alert("Year of Birth: " + yearOfBirth);
+  } else {
+    alert("Invalid NIC number.");
+  }
+}
+</script>
+
+<button onclick="displayYearOfBirth()">Get Year of Birth</button>
+
+</body>
+</html>
